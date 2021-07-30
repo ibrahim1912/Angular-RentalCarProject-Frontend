@@ -1,0 +1,150 @@
+
+
+
+ <!-- Button trigger modal -->
+<button type="button" 
+    data-bs-toggle="modal" class="btn btn-warning float-end mt-3 ms-3" data-bs-target="#exampleModal">
+    Aracı kirala
+  </button>
+  
+   <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="100" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="rentalAddForm">
+            <div class="mb-3">
+                <label for="carId">Araba Id</label>
+                <div class="form-group">
+                    <input type="number" 
+                    id="carId" 
+                    formControlName="carId" class="form-control" 
+                    placeholder="araba id si"/>
+                </div>
+            </div>
+
+
+            <div class="mb-3">
+                <label for="customerId">Müşteri Id</label>
+                <div class="form-group">
+                    <input type="number" 
+                    id="customerId" 
+                    formControlName="customerId" class="form-control" 
+                    placeholder="Müşteri id si"/>
+                </div>
+            </div>
+           
+            <div class="mb-3">
+                <label for="rentDate">Kiralama tarihi başlangıç</label>
+                <div class="form-group">
+                    <input type="date" 
+                    id="rentDate" 
+                    formControlName="rentDate" class="form-control" 
+                    placeholder="Kiralma tarihi"/> 
+                </div>
+            </div>
+
+            <!-- <label for="returnDate" class="col-4 col-form-label">Kiralama tarihi başlangıç:</label>
+            <div class="form-group ">
+              <div class="col-8">
+                <input class="form-control" type="date" min="{{ getDate(1) }}" value="{{ getDate(1) }}"
+                  [(ngModel)]="rentDate" />
+              </div>
+            </div> -->
+
+
+
+
+           <div class="mb-3">
+            <label for="returnDate">Kiralama tarihi bitiş</label>
+            <div class="form-group">
+                <input type="date" 
+                id="returnDate" 
+                formControlName="returnDate" class="form-control" 
+                placeholder="Bitiş tarihi"/>
+            </div>
+           </div>
+            
+        </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary"(click)="add()" >Kirala</button>
+          <app-payment *ngIf="isRented" [rentForPayment]="rental"></app-payment>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+<!-- sonraadan gelen -->
+<!-- <div class="d-grid gap-2">
+  <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#rentModal">
+    Rent It
+  </button>
+</div>
+
+<div class="modal fade" id="rentModal" tabindex="-1" aria-labelledby="rentModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="rentModalLabel">
+          Rent
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <label for="dailyPrice" class="col-4 col-form-label">Daily Price:</label>
+        <div class="form-group row mb-2">
+          <div class="col-8">
+            <input id="dailyPrice" type="text" disabled="disabled" class="form-control"
+              [value]="car.dailyPrice | currency " />
+          </div>
+        </div>
+
+        <label for="customer" class="col-4 col-form-label">Customer :</label>
+        <div class="form-group row mb-2">
+          <div class="col-8">
+            <select [(ngModel)]="customerId" class="form-select" >
+              <option *ngFor="let customer of customers" [value]="customer.customerId" >
+                {{ customer.companyName }}
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <label for="rentDate" class="col-4 col-form-label">Rent Date:</label>
+        <div class="form-group row mb-2">
+          <div class="col-8">
+            <input class="form-control" min="{{ getDate(1) }}" value="{{ getDate(1) }}" type="date"
+              [(ngModel)]="rentDate" />
+          </div>
+        </div>
+
+        <label for="returnDate" class="col-4 col-form-label">Return Date:</label>
+        <div class="form-group row">
+          <div class="col-8">
+            <input class="form-control" type="date" min="{{ getDate(2) }}" value="{{ getDate(2) }}"
+              [(ngModel)]="returnDate" />
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="modal-footer">
+        <button data-bs-dismiss="modal" (click)="create()" type="button" class="btn btn-outline-success">
+          Rent
+        </button>
+      </div>
+
+      
+    </div>
+  </div>
+</div>  -->

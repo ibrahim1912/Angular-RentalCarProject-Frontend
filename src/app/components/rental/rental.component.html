@@ -1,0 +1,94 @@
+<!-- <div *ngIf="dataLoaded==false" class="spinner-border text-success" role="status">
+    <span class="visually-hidden"> </span>
+  </div>
+  <table *ngIf="dataLoaded!=false" class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Markası</th>
+            <th scope="col">Rengi</th>
+            <th scope="col">Şirket ismi</th>
+            <th scope="col">Müşterinin adı ve soyadı</th>
+            <th scope="col">Kiralama Tarihi</th>
+            <th scope="col">Kiradan Dönüş Tarihi</th>     
+        </tr>
+    </thead>
+    <tr *ngFor="let rental of rentalDetails">
+      <td>{{rental.rentalId}}</td>
+      <td>{{rental.brandName}}</td>
+      <td>{{rental.colorName}}</td>
+      <td>{{rental.companyName}}</td>
+      <td>{{rental.userName}}</td>
+      <td>{{rental.rentDate}}</td>
+      <td>{{rental.returnDate}}</td>
+    </tr>
+  </table> -->
+
+  <div class="d-grid gap-2">
+    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#rentModal">
+      Rent It
+    </button>
+  </div>
+  
+  <div  class="modal fade" id="rentModal" tabindex="-1" aria-labelledby="rentModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <div class="modal-header">
+          <h5 class="modal-title" id="rentModalLabel">
+            Rent
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+  
+        <div class="modal-body">
+  
+          <label for="dailyPrice" class="col-4 col-form-label">Daily Price:</label>
+          <div class="form-group row mb-2">
+            <div class="col-8">
+              <input id="dailyPrice" type="text" disabled="disabled" class="form-control"
+                [value]="car.dailyPrice | currency " />
+            </div>
+          </div>
+  
+          <label for="customer" class="col-4 col-form-label">Customer :</label>
+          <div class="form-group row mb-2">
+            <div class="col-8">
+              <select [(ngModel)]="customerId" class="form-select" >
+                <option *ngFor="let customer of customers" [value]="customer.customerId" >
+                  {{ customer.companyName }}
+                </option>
+              </select>
+            </div>
+          </div>
+  
+          <label for="rentDate" class="col-4 col-form-label">Rent Date:</label>
+          <div class="form-group row mb-2">
+            <div class="col-8">
+              <input class="form-control" min="{{ getDate(1) }}" value="{{ getDate(1) }}" type="date"
+                [(ngModel)]="rentDate" />
+            </div>
+          </div>
+  
+          <label for="returnDate" class="col-4 col-form-label">Return Date:</label>
+          <div class="form-group row">
+            <div class="col-8">
+              <input class="form-control" type="date" min="{{ getDate(2) }}" value="{{ getDate(2) }}"
+                [(ngModel)]="returnDate" />
+            </div>
+          </div>
+  
+        </div>
+  
+  
+        <div class="modal-footer">
+          <button data-bs-dismiss="modal" (click)="create()" type="button" class="btn btn-outline-success">
+            Rent
+          </button>
+        </div>
+  
+        
+      </div>
+    </div>
+  </div>
+

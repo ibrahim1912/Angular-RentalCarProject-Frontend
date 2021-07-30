@@ -1,0 +1,161 @@
+ <div class="card">
+  <div class="card-body"> 
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div *ngFor="let image of images let i = index" [ngClass]="getSliderClassName(i)">
+              <img src="{{imageUrl}}/{{image.imagePath}}" class="d-block w-100" width="800" height="400" alt="...">
+            </div>
+          </div>
+          
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+      </div>
+      <table class="table m-1">
+        <thead>
+          <tr>
+            <th>Marka</th>
+            <th>Renk</th>
+            <th>Model Yılı</th>
+            <th>Günlük Fiyatı</th>
+            <th>Diğer</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let car of cars">
+            <td>{{ car.brandName }}</td> 
+            <td>{{ car.colorName}}</td>
+            <td>{{ car.modelYear }}</td>
+            <td>{{ car.dailyPrice | currency:"₺"}}</td>
+            <td>{{ car.description }}</td>
+        </tbody>
+      </table> 
+   
+      <!--- burası çalışan yer açılcak -->
+   
+      <!-- <app-rental-add>  
+
+      </app-rental-add> -->
+       <!-- //burası çalışan yer açılcak -->
+
+       <app-rent2></app-rent2>
+
+      <!-- <button
+      routerLink="/cars"
+      (click)="getBack()"
+      type="button"
+      aria-current="true"
+      class="btn btn-info float-end mt-3 ms-3">
+      Geri dön
+      </button> 
+  </div>
+</div> --> 
+<!-- <div class="d-grid gap-2 m-2" *ngIf="cars ">
+        <app-rental-add [car]="cars"></app-rental-add>
+      </div> -->
+  
+<!-- Sonradan denemek için eklendi -->
+
+<!-- <div *ngIf='cars' class="card">
+  <div class="card-header d-flex justify-content-between">
+    <h4>{{ cars.carName }}</h4>
+    <input
+      class="btn btn-success"
+      type="button"
+      data-bs-toggle="modal"
+      data-bs-target="#rentModel"
+      data-bs-whatever="@mdo"
+      value="Rent"
+    />
+  </div>
+  <div class="row g-0">
+    <div class="col-md-8">
+      <div
+        id="carouselExampleControls"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div
+            class="carousel-item {{ i == 0 ? 'active' : null }}"
+            *ngFor="let carImage of images; let i = index"
+          >
+            <img
+              src="{{ imageUrl }}{{ carImage.imagePath }}"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card-body">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <h5>Car Details</h5>
+          </li>
+          <li class="list-group-item">Model : {{ cars.carName }}</li>
+          <li class="list-group-item">Brand : {{ cars.brandName }}</li>
+          <li class="list-group-item">
+            Model Year : {{ cars.modelYear }}
+          </li>
+          <li class="list-group-item">Color : {{ cars.colorName }}</li>
+          <li class="list-group-item">
+            Daily Price : {{ cars.dailyPrice }} ₺
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  class="modal fade"
+  id="rentModel"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <app-rental-add></app-rental-add>
+</div>
+  -->
+
+<!-- bu kısmı sonra kullanabilirim -->
+ <!-- <th scope="col" style="background-color: rgb(174, 204, 214); border-radius: 10px">Brand</th> 
+            <th scope="col" style="background-color: rgb(148, 199, 218); border-radius: 10px">Color</th>
+            <th scope="col" style="background-color: rgb(146, 214, 236); border-radius: 10px">Model Year</th>
+            <th scope="col" style="background-color: rgb(116, 207, 238); border-radius: 10px">Daily Price</th>
+            <th scope="col" style="background-color: rgb(98, 217, 250); border-radius: 10px">Description</th>-->
+
+      <!-- <button
+      routerLink="/rentals/add"
+      type="button"
+      aria-current="true"
+      class="btn btn-info float-end mt-3 ms-3">
+      Aracı kirala
+      </button>  -->
+<!-- bu kısım sonra kullanabilirim -->

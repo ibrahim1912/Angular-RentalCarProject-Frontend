@@ -1,0 +1,151 @@
+
+<div
+  *ngIf="dataLoaded == false"
+  class="spinner-border text-info m-4"
+  role="status"
+></div>
+
+<div class="mb-3">
+  <label for="filterText" class="form-label">Araba ara</label>
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" 
+  placeholder="arama ifadesi giriniz">
+</div>
+
+<div *ngIf="filterText.length>2" class="alert alert-success">
+  {{filterText}} aradınız.
+</div>
+
+<table *ngIf="dataLoaded == true" class="table m-4">
+  <thead>
+    <tr>
+      <th>Marka</th>
+      <th>Renk</th>
+      <th>Model Yılı</th>
+      <th>Günlük Fiyatı</th>
+      <th>Kdv'li Fiyat</th>
+      <th>Yakıt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let car of cars | filterPipe:filterText"
+    (click)="setCurrentCar(car)"
+    routerLink = "/cars/details/{{car.carId}}"
+    [class]="getCarClass(car)">
+      <td>{{ car.brandName }}</td>
+      <td>{{ car.colorName}}</td>
+      <td>{{ car.modelYear }}</td>
+      <td>{{ car.dailyPrice | currency: "₺" }}</td>
+      <td>{{ car.dailyPrice |vatAdded:18 | currency: "₺"}}</td>
+      <td>{{ car.description }}</td>
+      <td><button type="button" class="btn btn-info ms-3">Araba detayı</button></td>
+    </tr>
+  </tbody>
+</table> 
+
+<!-- ilk deneme -->
+ <!-- <div *ngIf="dataLoaded==false" class="spinner-border text-success" role="status">
+    <span class="visually-hidden"> </span>
+  </div>
+<table *ngIf="dataLoaded!=false" class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Araba adı</th>
+            <th>Marka adı</th>
+            <th>Renkler</th>
+            <th>Model yılı</th>
+            <th>Günlük fiyat</th>
+            <th>Açıklama</th>
+
+        </tr>
+    </thead>
+    <tr *ngFor="let car of cars">
+        <td>{{car.carId}}</td>
+        <td>{{car.carName}}</td>
+        <td>{{car.brandName}}</td>
+        <td>{{car.colorName}}</td>
+        <td>{{car.modelYear}}</td>
+        <td>{{car.dailyPrice}}</td>
+        <td>{{car.description}}</td>
+    </tr>
+</table>
+
+ <div *ngIf="dataLoaded==false" class="spinner-border text-success" role="status">
+  <span class="visually-hidden"> </span>
+</div> -->
+<!-- ilk deneme -->
+
+
+
+<!-- sonradan eklendi -->
+
+<!-- <div class="row">
+  <div class="col-md-3">
+    <div class="sticky-top sidebar m-2">
+      <div class="box"><app-brand></app-brand></div>
+      <div class="box"><app-color></app-color></div>
+    </div>
+  </div>  
+
+  <div class="col-md-6 ms-2">
+    <div class="body">
+
+      <div *ngIf="!(cars && (brands || colors))" class="alert alert-info w-100" role="alert">
+        Not exist cars
+      </div>
+      
+        <div class="row m-2" >
+          <div class="col col-4">
+              <select [(ngModel)]="brandFilter"  class="form-select" aria-label="Default select example">
+                  <option *ngFor="let brand of brands" [value]="brand.brandId" [selected]="getSelectedBrand(brand.brandId)">{{brand.brandName}}</option>
+                </select>
+          </div>
+          <div class="col col-4">
+              <select [(ngModel)]="colorFilter" class="form-select" aria-label="Default select example">
+                  <option *ngFor="let color of colors" [value]="color.colorId" [selected]="getSelectedColor(color.colorId)">{{color.colorName}}</option>
+                </select>
+          </div>
+          <div class="col col-2">
+              <a routerLink="/cars/filter/brand/{{brandFilter}}/color/{{colorFilter}}" class="btn btn-info">Filter</a>
+              </div>
+              <div class="col col-2">
+                  <a routerLink="/cars" class="btn btn-danger">Clear All</a>
+              </div>
+      </div>
+      
+      <table *ngIf="cars" class="table m-4">
+        <thead>
+          <tr>
+            <th scope="col" style="background-color: rgb(174, 204, 214); border-radius: 10px">Brand</th>
+            <th scope="col" style="background-color: rgb(148, 199, 218); border-radius: 10px">Color</th>
+            <th scope="col" style="background-color: rgb(125, 215, 245); border-radius: 10px">Model Year</th>
+            <th scope="col" style="background-color: rgb(117, 212, 243); border-radius: 10px">Daily Price</th>
+            <th scope="col" style="background-color: rgb(101, 210, 247); border-radius: 10px">Daily Price + VAT</th>
+            <th scope="col" style="background-color: rgb(98, 217, 250); border-radius: 10px">Description</th>
+            <th scope="col" style="background-color: rgb(77, 215, 253); border-radius: 10px">Findex Score</th> 
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let car of cars"
+          (click)="setCurrentCar(car)"
+          routerLink = "/cars/details/{{car.carId}}"
+          [class]="getCarClass(car)">
+            <td>{{ car.brandName | uppercase }}</td>
+            <td>{{ car.colorName}}</td>
+            <td>{{ car.modelYear }}</td>
+            <td>{{ car.dailyPrice | currency }}</td>
+            <td>{{ car.dailyPrice | vatAdded:8 | currency}}</td>
+            <td>{{ car.description }}</td>
+           <td>{{ car.minFindexScore }}</td>  
+            <td><button type="button" class="btn btn-success">Get Details</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>    -->
+
+
+
+
+

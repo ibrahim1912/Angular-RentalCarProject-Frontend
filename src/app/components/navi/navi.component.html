@@ -1,0 +1,113 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul> 
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav> -->
+
+
+  <!-- sonradan eklendi -->
+
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:rgb(209, 17, 177)">
+
+    <div class="container-fluid">
+  
+      <a class="navbar-brand p-2" style="background-color:rgb(42, 167, 11); color:rgb(0, 0, 0); border-radius: 8px;"
+        routerLink="/homepage">RentalCar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse m-2" id="navbarSupportedContent">
+  
+        <ul class="navbar-nav me-auto ms-5 mb-lg-0 ">
+  
+          <li class="nav-item">
+            <a class="nav-link active " aria-current="page" routerLink="/homepage">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" routerLink="/cars">RENT NOW!</a>
+          </li>
+          </ul>
+  
+          <div >
+            <ul class="navbar-nav me-auto ms-5 mb-lg-0 ">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <div class="text-center"
+                style="color:darkolivegreen; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 18px;">
+                
+              </div>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" aria-current="page" routerLink="/list">Operations</a>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" routerLink="/cars">Cars</a></li>
+                <li><a class="dropdown-item" routerLink="/customers">Customers</a></li>
+                <li><a class="dropdown-item" routerLink="/brands">Brands</a></li>
+                <li><a class="dropdown-item" routerLink="/colors">Colors</a></li>
+                <li><a class="dropdown-item" routerLink="/rentals">Rentals</a></li>
+                <li><a class="dropdown-item"><button class="btn btn-outline-warning" routerLink="/user/edit/">Edit Info</button></a></li>
+                <li><a class="dropdown-item"><button class="btn btn-outline-danger ms-2" >Log Out</button></a></li>
+              </ul>
+            </li>
+          </ul>
+          </div>
+  
+          <div class="mb-2" >
+  
+            <form class="d-flex">
+              <div class="d-flex btn-group ps-4" role="group" aria-label="Basic radio toggle button group">
+  
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
+                <label class="btn btn-outline-info" for="btnradio1" routerLink="/login">Login</label>
+  
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                <label class="btn btn-outline-success" for="btnradio2" routerLink="/register">Register</label>
+  
+              </div>
+            </form>
+  
+          </div>
+  
+      </div>
+  
+    </div>
+    
+  </nav>
+
+  
