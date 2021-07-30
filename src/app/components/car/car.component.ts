@@ -22,7 +22,7 @@ export class CarComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
-      //paremetreler
+      //paremetrelerrr
       if (params['brandId']) {
         this.getCarsByBrand(params['brandId']);
       } else if (params['colorId']) {
